@@ -8,7 +8,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const project = getProjectById(params.id);
+  const { id } = await params;
+  const project = getProjectById(id);
   
   if (!project) {
     return {
@@ -22,8 +23,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function ProjectPage({ params }) {
-  const project = getProjectById(params.id);
+export default async function ProjectPage({ params }) {
+  const { id } = await params;
+  const project = getProjectById(id);
 
   if (!project) {
     notFound();

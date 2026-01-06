@@ -79,12 +79,13 @@ export default function ProjectDetail({ project }) {
           </div>
 
           {/* Project Image */}
-          <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-white/10 mb-8">
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-white/10 mb-8">
             <Image
               src={project.image}
               alt={project.title}
-              fill
-              className="object-cover"
+              width={1200}
+              height={800}
+              className="w-full h-auto"
               priority
             />
           </div>
